@@ -13,7 +13,7 @@ var port = 3000;
 
 /* setting up Mongoose */
 
-mongoose.connect("mongodb://KingCosmic:lancelotforpresident@ds145289.mlab.com:45289/mwsg");
+mongoose.connect("mongodb://<user>:<password>@ds145289.mlab.com:45289/mwsg");
 
 var Schema = mongoose.Schema;
 
