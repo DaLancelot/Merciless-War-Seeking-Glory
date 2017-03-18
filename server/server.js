@@ -13,7 +13,7 @@ var port = 3000;
 
 /* setting up Mongoose */
 
-mongoose.connect("mongodb://<user>:<password>@ds145289.mlab.com:45289/mwsg");
+mongoose.connect("mongodb://KingCosmic:lancelotforpresident@ds145289.mlab.com:45289/mwsg");
 
 var Schema = mongoose.Schema;
 
@@ -205,6 +205,9 @@ io.on('connection', function(socket) {
 				socket.id = user.id;
 				users[socket.id] = socket;
 				users[user.id].emit("loggedin", user);
+				castleData.findOne({id: user.main}, function(err, castle) {
+					users[user.id].emit("loading", castle);
+				});
 			}
 		})
 	})
