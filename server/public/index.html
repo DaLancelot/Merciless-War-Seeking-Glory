@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>TWR</title>
+</head>
+<body>
+<script src="/socket.io/socket.io.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+<script>
+  var socket = io();
+  window.onload = function() {
+  	$(document).ready(function() {
+  		$("#register").submit(function(e) {
+  			e.preventDefault();
+  			socket.emit("register", {name: $("#rname").val(), pass: $("#rpass").val()});
+  		});
+
+  		$("#login").submit(function(e) {
+  			e.preventDefault();
+  			socket.emit("login", {name: $("#lname").val(), pass: $("#lpass").val()});
+  		});
+
+  		socket.on("loggedin", function(user) {
+  			$("#form").hide();
+  			console.log(user);
+  		});
+
+  	});
+  };
+
+</script>
+
+	<div id="form">
+		<form id="register">
+			<h3>Register</h3>
+			<a>Username</a>
+			<input id="rname" type="text" name="Username"><br>
+			<a>Password</a>
+			<input id="rpass" type="text" name="Password"><br>
+			<input type="submit" name="submit">
+		</form>
+		<form id="login">
+			<h3>Login</h3>
+			<a>Username: </a>
+			<input id="lname" type="text" name="Username"><br>
+			<a>Password: </a>
+			<input id="lpass" type="text" name="Password"><br>
+			<input type="submit" name="submit">
+		</form>
+	</div>
+</body>
+</html>
