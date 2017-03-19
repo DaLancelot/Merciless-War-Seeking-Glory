@@ -4,56 +4,55 @@
 	<title>TWR</title>
 </head>
 <body>
-<script src="/socket.io/socket.io.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="/socket.io/socket.io.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/castle.css">
 
-<link rel="stylesheet" type="text/css" href="css/castle.css">
+	<script>
+	var socket = io.connect('http://localhost:3000');
+	  window.onload = function() {
+	  	$(document).ready(function() {
+	  		$("#castlemenu").hide();
+	  		$("#register").submit(function(e) {
+	  			e.preventDefault();
+	  			socket.emit("register", {name: $("#rname").val(), pass: $("#rpass").val()});
+	  		});
 
-<script>
-  var socket = io();
-  window.onload = function() {
-  	$(document).ready(function() {
-  		$("#castlemenu").hide();
-  		$("#register").submit(function(e) {
-  			e.preventDefault();
-  			socket.emit("register", {name: $("#rname").val(), pass: $("#rpass").val()});
-  		});
+	  		$("#login").submit(function(e) {
+	  			e.preventDefault();
+	  			socket.emit("login", {name: $("#lname").val(), pass: $("#lpass").val()});
+	  		});
 
-  		$("#login").submit(function(e) {
-  			e.preventDefault();
-  			socket.emit("login", {name: $("#lname").val(), pass: $("#lpass").val()});
-  		});
+	  		socket.on("loggedin", function(user) {
+	  			$("#form").hide();
+	  			console.log(user);
+	  			$("#name").append(user.name);
+	  			$("#silver").append(user.silver);
+	  		});
+	  		socket.on("loading", function(castle) {
+	  			console.log(castle);
+	  			b = castle.buildings;
+	  			$("#castle").append(b.castle.info + "<br> level: " + b.castle.lvl);
+	  			$("#lumberyard").append(b.lumberyard.info + "<br> level: " + b.lumberyard.lvl);
+	  			$("#quarry").append(b.quarry.info + "<br> level: " + b.quarry.lvl);
+	  			$("#ironmine").append(b.ironmine.info + "<br> level: " + b.quarry.lvl);
+	  			$("#farm").append(b.farm.info + "<br> level: " + b.farm.lvl);
+	  			$("#warehouse").append(b.warehouse.info + "<br> level: " + b.warehouse.lvl);
+	  			$("#barracks").append(b.barracks.info + "<br> level: " + b.barracks.lvl);
+	  			$("#archrange").append(b.archrange.info + "<br> level: " + b.archrange.lvl);
+	  			$("#siegeworkshop").append(b.siegeworkshop.info + "<br> level: " + b.siegeworkshop.lvl);
+	  			$("#horsestables").append(b.horsestables.info + "<br> level: " + b.horsestables.lvl);
+	  			$("#market").append(b.market.info + "<br> level: " + b.market.lvl);
+	  			$("#wall").append(b.wall.info + "<br> level: " + b.wall.lvl);
+	  			$("#hospital").append(b.hospital.info + "<br> level: " + b.hospital.lvl);
+	  			$("#castlemenu").show();
+	  		})
 
-  		socket.on("loggedin", function(user) {
-  			$("#form").hide();
-  			console.log(user);
-  			$("#name").append(user.name);
-  			$("#silver").append(user.silver);
-  		});
-  		socket.on("loading", function(castle) {
-  			console.log(castle);
-  			b = castle.buildings;
-  			$("#castle").append(b.castle.info + "<br> level: " + b.castle.lvl);
-  			$("#lumberyard").append(b.lumberyard.info + "<br> level: " + b.lumberyard.lvl);
-  			$("#quarry").append(b.quarry.info + "<br> level: " + b.quarry.lvl);
-  			$("#ironmine").append(b.ironmine.info + "<br> level: " + b.quarry.lvl);
-  			$("#farm").append(b.farm.info + "<br> level: " + b.farm.lvl);
-  			$("#warehouse").append(b.warehouse.info + "<br> level: " + b.warehouse.lvl);
-  			$("#barracks").append(b.barracks.info + "<br> level: " + b.barracks.lvl);
-  			$("#archrange").append(b.archrange.info + "<br> level: " + b.archrange.lvl);
-  			$("#siegeworkshop").append(b.siegeworkshop.info + "<br> level: " + b.siegeworkshop.lvl);
-  			$("#horsestables").append(b.horsestables.info + "<br> level: " + b.horsestables.lvl);
-  			$("#market").append(b.market.info + "<br> level: " + b.market.lvl);
-  			$("#wall").append(b.wall.info + "<br> level: " + b.wall.lvl);
-  			$("#hospital").append(b.hospital.info + "<br> level: " + b.hospital.lvl);
-  			$("#castlemenu").show();
-  		})
+	  	});
+	  };
 
-  	});
-  };
+	</script>
 
-</script>
-	
 	<div id="castlemenu">
 		<a id="name"></a><a id="silver"></a><br>
 		<div id="buildings" style="overflow-y: scroll;">
@@ -87,9 +86,10 @@
 			<a>Username: </a>
 			<input id="lname" type="text" name="Username"><br>
 			<a>Password: </a>
-			<input id="lpass" type="text" name="Password"><br>
+			<input id="lpass" type="password" name="Password"><br>
 			<input type="submit" name="submit">
 		</form>
 	</div>
+	<a href="/KingLancelot">Go There</a>
 </body>
 </html>

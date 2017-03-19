@@ -1,29 +1,22 @@
 /* constants */
-const app = require("express")(),
-	http = require("http").Server(app),
-	io = require("socket.io")(http),
+var express = require("express"),
+	app = express(),
+	server = require("http").Server(app),
+	io = require("socket.io")(server),
+	path = require('path'),
 	mongoose = require("mongoose"),
-	shortid = require("shortid");
+	shortid = require("shortid"),
+	userDataSchema = require("./models/user");
+
+app.use(express.static(path.join(__dirname, 'public')));
+app.set('view engine', 'ejs');
 
 var users = {};
 
-/* setting variables */
-
-var port = 3000;
-
 /* setting up Mongoose */
-
 mongoose.connect("mongodb://KingCosmic:lancelotforpresident@ds145289.mlab.com:45289/mwsg");
 
 var Schema = mongoose.Schema;
-
-var userDataSchema = new Schema({
-	name: String,
-	pass: String,
-	id: String,
-	main: String,
-	silver: Number
-});
 
 var castleDataSchema = new Schema({
 	owner: String,
@@ -96,7 +89,7 @@ var castleDataSchema = new Schema({
 	}
 });
 
-var userData = mongoose.model("users", userDataSchema);
+var userData = userDataSchema;
 var castleData = mongoose.model("castles", castleDataSchema);
 /* socket io */
 
@@ -205,6 +198,7 @@ io.on('connection', function(socket) {
 				socket.id = user.id;
 				users[socket.id] = socket;
 				users[user.id].emit("loggedin", user);
+				console.log(`${user.name} just logged in.`);
 				castleData.findOne({id: user.main}, function(err, castle) {
 					users[user.id].emit("loading", castle);
 				});
@@ -220,9 +214,22 @@ io.on('connection', function(socket) {
 /* express */
 
 app.get('/', function(req, res) {
-	res.sendFile(__dirname + '/public/index.html');
+	res.sendFile('index.html');
 });
 
-http.listen(port, function() {
-	console.log("listening on: " + port);
+app.get('/:user', function(req, res) {
+	userData.findOne({name : req.params.user}, function(err, user) {
+		if (err) return console.error(err);
+		castleData.findOne({id: user.main}, function(err, castle) {
+			res.render('layout', {
+				owner : castle.owner,
+				silver : castle.silver,
+				buildings: castle.buildings
+			})
+		});
+	});
+});
+
+server.listen(3000, function() {
+	console.log("listening on: 3000");
 });
