@@ -6,7 +6,6 @@
 <body>
 	<script src="/socket.io/socket.io.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-	<link rel="stylesheet" type="text/css" href="css/castle.css">
 
 	<script>
 	var socket = io.connect('http://localhost:3000');
@@ -46,7 +45,10 @@
 	  			$("#wall").append(b.wall.info + "<br> level: " + b.wall.lvl);
 	  			$("#hospital").append(b.hospital.info + "<br> level: " + b.hospital.lvl);
 	  			$("#castlemenu").show();
-	  		})
+	  		});
+				socket.on("err_register", function (data) {
+					alert(data.error);
+				})
 
 	  	});
 	  };
@@ -76,17 +78,17 @@
 		<form id="register">
 			<h3>Register</h3>
 			<a>Username</a>
-			<input id="rname" type="text" name="Username"><br>
+			<input id="rname" type="text" name="Username" placeholder="Username"><br>
 			<a>Password</a>
-			<input id="rpass" type="text" name="Password"><br>
+			<input id="rpass" type="password" name="Password" placeholder="Password"><br>
 			<input type="submit" name="submit">
 		</form>
 		<form id="login">
 			<h3>Login</h3>
 			<a>Username: </a>
-			<input id="lname" type="text" name="Username"><br>
+			<input id="lname" type="text" name="Username" placeholder="Username"><br>
 			<a>Password: </a>
-			<input id="lpass" type="password" name="Password"><br>
+			<input id="lpass" type="password" name="Password" placeholder="Password"><br>
 			<input type="submit" name="submit">
 		</form>
 	</div>

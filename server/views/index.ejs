@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
+    <script src="/socket.io/socket.io.js"></script>
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  	<link rel="stylesheet" type="text/css" href="css/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/fonts.css">
+    <link rel="stylesheet" type="text/css" href="css/core.nested.css">
+  </head>
+  <body>
+    <!-- HUD TOP -->
+    <div class="hud_top">
+      <div class="hud_user_exp">
+        <div id="exp_bar"></div>
+      </div>
+      <div class="hud_user_avatar">
+        <img src="img/profile.jpg" alt="">
+      </div>
+      <div class="hud_user_info">
+        <h1><%= owner %></a></h1>
+        <h3>N3RV Alliance</a></h3>
+      </div>
+      <div class="hud_user_currency">
+        <ul>
+          <li>100k</li>
+          <li>500k</li>
+        </ul>
+      </div>
+      <div class="hud_user_rss">
+        <% include partials/hud_rss %>
+      </div>
+      <div class="hud_chat">
+        <p><span class="chat_user">KingCosmic:</span>What? check: <span class="chat_link">[King Arthurs Hold]</span></p>
+      </div>
+    </div>
+    <!-- GAME CANVAS -->
+    <div id="game">
+      <canvas id="canvas" width="300" height="300"></canvas>
+    </div>
+    <!-- HUD BOT -->
+    <!-- <div class="hud_action_menu"><i class="fa fa-plus" aria-hidden="true"></i></div> -->
+    <div class="hud_bot">
+      <% include partials/hud_castle %>
+    </div>
+    <!-- HUD MODAL -->
+    <% include partials/hud_modal %>
+    <!-- SCRIPTS -->
+    <script src="js/interact.min.js" charset="utf-8"></script>
+    <script src="js/index.js" charset="utf-8"></script>
+  </body>
+</html>

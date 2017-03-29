@@ -1,0 +1,591 @@
+html, body
+  width: 100%
+  height: 100%
+  margin: 0
+  padding: 0
+  background-color: rgba(250, 250, 250, 1)
+
+
+div#castlemenu
+  display: none
+
+body
+  position: relative
+
+  div.hud_top
+    width: 100%
+    height: 94px
+    position: absolute
+    left: 0
+    top: 0
+    margin: 0
+    padding: 0
+    background-color: rgba(30, 41, 42, .5)
+
+    div.hud_user_exp
+      float: left
+      width: 100%
+      height: 4px
+      background-color: rgba(255, 255, 255, 1)
+
+      div#exp_bar
+        width: 50%
+        height: 4px
+        margin: 0
+        padding: 0
+        background-color: rgba(0, 192, 230, .8)
+
+    div.hud_user_avatar
+      width: 65px
+      height: 65px
+      float: left
+      background-color: rgba(40, 41, 42, .7)
+
+      img
+        width: 65px
+        height: 65px
+        margin: 0
+        padding: 0
+
+    div.hud_user_info
+      width: auto
+      height: 65px
+      max-height: 65px
+      float: left
+
+      h1
+        font-family: 'Georgia', sans-serif
+        font-weight: 300
+        padding: 5px
+        margin: 0
+        font-size: 1.2em
+        color: rgba(255, 255, 255, .9)
+        line-height: 1.2em
+
+      h3
+        font-family: 'Open Sans', 'Georgia', sans-serif
+        font-weight: 300
+        padding: 4px
+        margin: 0
+        font-size: .9em
+        color: rgba(255, 255, 255, .9)
+        line-height: .9em
+
+    div.hud_user_currency
+      width: 100px
+      height: 65px
+      float: right
+
+      ul
+        width: 100px
+        height: 65px
+        margin: 0
+        padding: 0
+        list-style-type: none
+
+        li:first-child
+          width: 100px
+          height: 33px
+          color: rgba(250, 250, 250, .8)
+          background-color: rgba(230, 190, 70, .4)
+          font-family: 'Open Sans'
+          font-weight: 300
+          font-size: 1.1em
+          text-align: center
+          margin: 0
+          padding: 0
+          line-height: 1.8em
+
+        li:last-child
+          width: 100px
+          height: 32px
+          color: rgba(250, 250, 250, .8)
+          background-color: rgba(70, 230, 143, .4)
+          font-family: 'Open Sans'
+          font-weight: 300
+          font-size: 1.1em
+          text-align: center
+          margin: 0
+          padding: 0
+          line-height: 1.8em
+
+      img
+        width: 65px
+        height: 65px
+        border: 0
+        outline: 0
+
+    div.hud_user_rss
+      float: left
+      width: 100%
+      height: 25px
+
+      ul
+        flot: left
+        width: 100%
+        height: 100%
+        margin: 0
+        padding: 0
+        list-style-type: none
+        display: flex
+
+        li
+          float: left
+          flex: 1 1 auto
+          font-family: 'Open Sans'
+          font-weight: 300
+          font-size: .8em
+          margin: auto
+          padding: 0
+          text-align: center
+          color: rgba(250, 250, 250, .7)
+
+
+          i
+            font-size: 1.3em
+            color: rgba(40, 41, 42, .9)
+    div.hud_chat
+      width: 100%
+      height: 20px
+      float: left
+      margin: 0
+      padding: 0
+      background-color: rgba(158, 54, 42, .99)
+
+      p
+        font-family: 'Open Sans'
+        font-weight: 300
+        color: rgba(255, 255, 255, .9)
+        font-size: .8em
+        margin: 2px
+        line-height: 16px
+
+        span.chat_user
+          font-size: 1em
+          line-height: 16px
+          margin-right: 4px
+          font-family: 'Georgia'
+
+        span.chat_link
+          color: rgba(255, 221, 166, .9)
+
+  div#game
+    width: 100%
+    height: 100%
+    margin: 0
+    padding: 0
+    background-color: rgba(40, 41, 41, .2)
+
+    canvas
+      width: 100%
+      height: 100%
+      margin: 0
+      padding: 0
+      background: url('../img/map.jpg') center center
+
+  // div.hud_action_menu
+  //   width: 32px
+  //   height: 32px
+  //   position: absolute
+  //   top: 0
+  //   left: 0
+  //   transform: translate(20px, 200px)
+  //   margin: 0
+  //   color: rgba(255, 255, 255, .7)
+  //   font-size: 1.6em
+  //   text-align: center
+  //   line-height: 36px
+  //   border-radius: 50%
+  //   background-color: rgba(40, 41, 42, .9)
+  //   z-index: 9
+
+  div.hud_bot
+    width: 100%
+    height: 64px
+    position: absolute
+    left: 0
+    bottom: 0
+    margin: 0
+    padding: 0
+    background-color: rgba(30, 41, 42, .5)
+
+    ul
+      width: 100%
+      height: 64px
+      margin: 0
+      padding: 0
+      list-style-type: none
+      display: flex
+      // flex-direction: row
+      // flex-wrape: nowrap
+
+      li
+        width: 64px
+        height: 64px
+        // flex: 1 1 64px
+        margin: auto
+        padding: 0
+        position: relative
+        background-color: rgba(40, 41, 42, .7)
+
+        img
+          width: 64px
+          height: 64px
+          position: absolute
+          top: 0
+          left: 0
+          z-index: 1
+
+        p
+          position: absolute
+          top: 0
+          left: 0
+          width: 64px
+          font-family: 'Georgia'
+          font-weight: 400
+          color: rgba(255, 255, 255, .8)
+          line-height: 32px
+          text-align: center
+          z-index: 2
+
+      li.to
+        width: 64px
+        height: 64px
+        margin: auto
+        padding: 0
+        position: relative
+        background-color: rgba(40, 41, 42, .7)
+
+        img
+          width: 64px
+          height: 64px
+          position: absolute
+          top: -20px
+          left: 0
+          z-index: 1
+
+        p
+          position: absolute
+          top: 48px
+          left: 0
+          width: 64px
+          font-family: 'Georgia'
+          font-weight: 400
+          color: rgba(255, 255, 255, .8)
+          font-size: .9em
+          line-height: .9em
+          margin: 0
+          padding: 0
+          text-align: center
+          z-index: 2
+
+      li.tt
+        width: 64px
+        height: 64px
+        margin: auto
+        padding: 0
+        position: relative
+        background-color: rgba(40, 41, 42, .7)
+
+        img
+          width: 64px
+          height: 64px
+          position: absolute
+          top: 0
+          left: 0
+          z-index: 1
+
+        p
+          position: absolute
+          top: 41px
+          left: 0
+          width: 64px
+          font-family: 'Georgia'
+          font-weight: 400
+          color: rgba(40, 41, 42, .7)
+          font-size: .9em
+          line-height: 1.6em
+          margin: 0
+          padding: 0
+          text-align: center
+          z-index: 2
+          background-color: rgba(255, 255, 255, .7)
+
+  div#hud_modal.comfirm
+    width: 300px
+    height: auto
+    margin: 0 0 0 -150px
+    padding: 0
+    position: absolute
+    z-index: 9
+    top: 100px
+    left: 50%
+    border-radius: 0
+    background-color: rgba(255, 255, 255, .9)
+    display: none
+
+    div.modal_head
+      width: 100%
+      height: 64px
+      padding: 0
+      margin: 0
+
+      p
+        padding: 0
+        margin: 0
+        font-family: 'Georgia'
+        font-weight: 400
+        text-align: center
+        font-size: 2em
+        line-height: 2em
+        color: rgba(40, 41, 42, .8)
+
+    div.modal_body
+      width: 290px
+      height: auto
+      padding: 5px
+
+      p
+        font-family: 'Open Sans'
+        font-weight: 300
+        font-size: .9em
+        color: rgba(40, 41, 42, .8)
+        padding: 0
+        margin: 0
+
+      ul
+        float: left
+        width: 270px
+        height: auto
+        margin: 10px 5px
+        padding: 5px
+        list-style-type: none
+        border-radius: 5px
+        background-color: rgba(40, 41, 42, .7)
+
+        li
+          float: left
+          font-family: 'Open Sans'
+          font-weight: 400
+          line-height: .85em
+          font-size: .85em
+          margin: 0 5px
+          color: rgba(255, 255, 255, .9)
+
+          i
+            font-size: .95em
+            line-height: .85em
+            margin: 0 4px
+            color: rgba(255, 255, 255, .9)
+
+    div.modal_foot
+      width: 300px
+      height: 64px
+      float: left
+      margin: 5px 0 0 0
+      padding: 0
+
+      div.cancel, div.comfirm
+        width: 140px
+        height: 54px
+        float: left
+        margin: 5px
+        padding: 0
+        font-family: 'Open Sans'
+        font-weight: 300
+        font-size: 1em
+        text-align: center
+        line-height: 54px
+        color: rgba(40, 41, 42, .9)
+
+      div.comfirm
+        border-radius: 3px
+        color: rgba(250, 250, 250, .7)
+        background-color: rgba(29, 79, 130, .7)
+      div.comfirm:hover
+        background-color: rgba(29, 79, 130, .9)
+      div.cancel:hover
+        text-decoration: underline
+
+  div#hud_modal_rank
+    width: 320px
+    height: 100%
+    margin: 0 0 0 -160px
+    padding: 0
+    position: absolute
+    top: 0
+    left: 50%
+    background-color: rgba(255, 255, 255, .2)
+    z-index: 9
+    display: none
+
+    div.hud_mr_head
+      width: 100%
+      height: 64px
+      float: left
+      margin: 0
+      padding: 0
+      background-color: rgba(40, 41, 42, .7)
+
+      div.hum_mr_close:hover
+        background-color: rgba(255, 255, 255, .5)
+      div.hud_mr_close
+        width: 64px
+        height: 64px
+        float: left
+        margin: 0
+        padding: 0
+        background-color: rgba(255, 255, 255, .3)
+
+        i
+          width: 64px
+          height: 64px
+          font-size: 2.5em
+          font-weight: 300
+          color: rgba(255, 255, 255, .9)
+          line-height: 64px
+          text-align: center
+          padding: auto
+
+      div.hud_mr_title
+        width: 256px
+        height: 32px
+        float: left
+        margin: 0
+        padding: 0
+
+        p
+          font-family: 'Georgia'
+          font-weight: 400
+          font-size: 1.5em
+          line-height: 32px
+          text-align: center
+          margin: 0
+          padding: 0
+          color: rgba(255, 255, 255, .9)
+
+      ul.hud_mr_division
+        width: 256px
+        height: 32px
+        float: left
+        list-style-type: none
+        margin: 0
+        padding: 0
+
+        li
+          float: left
+          width: 128px
+          height: 32px
+          font-family: 'Georgia'
+          font-weight: 300
+          font-size: 1.1em
+          line-height: 32px
+          text-align: center
+          color: rgba(255, 255, 255, .7)
+        li.active
+          background-color: rgba(40, 41, 42, .6)
+
+    div.hud_mr_body
+      width: 320px
+      height: auto
+      margin: 5px 0
+      padding: 0
+      float: left
+
+      ul
+        float: left
+        list-style-type: none
+        width: 300px
+        margin: 15px 10px
+        padding: 0
+
+        li
+          width: 300px
+          height: 64px
+          float: left
+          padding: 0
+          margin: 10px 0
+          background-color: rgba(255, 255, 255, .7)
+          border-radius: 4px
+
+          img
+            width: 64px
+            height: 64px
+            float: left
+            border-radius: 4px 0 0 4px
+
+          p
+            float: left
+            width: 172px
+            height: 64px
+            font-family: 'Georgia'
+            font-weight: 300
+            color: rgba(40, 41, 42, .9)
+            line-height: 32px
+            text-align: center
+            margin: 0
+            padding: 0
+            font-size: 1.1em
+
+            span.rank_alliance
+              font-weight: 400
+              color: rgba(40, 41, 42, .7)
+
+          div.hud_mr_r
+            width: 64px
+            height: 64px
+            float: left
+            margin: 0
+            padding: 0
+
+            p:first-child
+              font-family: 'Open Sans'
+              font-weight: 300
+              font-size: .8em
+              text-align: center
+              line-height: 20px
+              width: 64px
+              height: 20px
+              margin: 0
+              padding: 0
+              color: rgba(255, 255, 255, .7)
+              background-color: rgba(40, 41, 42, 1)
+              border-radius: 0 4px 0 0
+
+            p:last-child
+              font-family: 'Georgia'
+              font-weight: 400
+              font-size: 2em
+              text-align: center
+              font-style: italic
+              // line-height: 44px
+              width: 64px
+              height: 44px
+              margin: 0
+              padding: 0
+              border-radius: 0 0 4px 0
+              color: rgba(255, 255, 255, .9)
+              background-color: rgba(40, 41, 41, .9)
+
+            p.first
+              color: rgba(217, 164, 65, .9)
+
+            p.second
+              color: rgba(204, 194, 194, .9)
+
+            p.third
+              color: rgba(150, 90, 56, .9)
+
+
+  div#overlay
+    width: 100%
+    height: 100%
+    position: absolute
+    top: 0
+    left: 0
+    z-index: 2
+    display: none
+
+    img
+      width: 100%
+      height: 100%

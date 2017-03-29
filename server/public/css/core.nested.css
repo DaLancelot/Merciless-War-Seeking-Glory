@@ -1,0 +1,502 @@
+html, body {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	background-color: #fafafa; }
+
+div#castlemenu {
+	display: none; }
+
+body {
+	position: relative; }
+	body div.hud_top {
+		width: 100%;
+		height: 94px;
+		position: absolute;
+		left: 0;
+		top: 0;
+		margin: 0;
+		padding: 0;
+		background-color: rgba(30, 41, 42, 0.5); }
+		body div.hud_top div.hud_user_exp {
+			float: left;
+			width: 100%;
+			height: 4px;
+			background-color: white; }
+			body div.hud_top div.hud_user_exp div#exp_bar {
+				width: 50%;
+				height: 4px;
+				margin: 0;
+				padding: 0;
+				background-color: rgba(0, 192, 230, 0.8); }
+		body div.hud_top div.hud_user_avatar {
+			width: 65px;
+			height: 65px;
+			float: left;
+			background-color: rgba(40, 41, 42, 0.7); }
+			body div.hud_top div.hud_user_avatar img {
+				width: 65px;
+				height: 65px;
+				margin: 0;
+				padding: 0; }
+		body div.hud_top div.hud_user_info {
+			width: auto;
+			height: 65px;
+			max-height: 65px;
+			float: left; }
+			body div.hud_top div.hud_user_info h1 {
+				font-family: 'Georgia', sans-serif;
+				font-weight: 300;
+				padding: 5px;
+				margin: 0;
+				font-size: 1.2em;
+				color: rgba(255, 255, 255, 0.9);
+				line-height: 1.2em; }
+			body div.hud_top div.hud_user_info h3 {
+				font-family: 'Open Sans', 'Georgia', sans-serif;
+				font-weight: 300;
+				padding: 4px;
+				margin: 0;
+				font-size: .9em;
+				color: rgba(255, 255, 255, 0.9);
+				line-height: .9em; }
+		body div.hud_top div.hud_user_currency {
+			width: 100px;
+			height: 65px;
+			float: right; }
+			body div.hud_top div.hud_user_currency ul {
+				width: 100px;
+				height: 65px;
+				margin: 0;
+				padding: 0;
+				list-style-type: none; }
+				body div.hud_top div.hud_user_currency ul li:first-child {
+					width: 100px;
+					height: 33px;
+					color: rgba(250, 250, 250, 0.8);
+					background-color: rgba(230, 190, 70, 0.4);
+					font-family: 'Open Sans';
+					font-weight: 300;
+					font-size: 1.1em;
+					text-align: center;
+					margin: 0;
+					padding: 0;
+					line-height: 1.8em; }
+				body div.hud_top div.hud_user_currency ul li:last-child {
+					width: 100px;
+					height: 32px;
+					color: rgba(250, 250, 250, 0.8);
+					background-color: rgba(70, 230, 143, 0.4);
+					font-family: 'Open Sans';
+					font-weight: 300;
+					font-size: 1.1em;
+					text-align: center;
+					margin: 0;
+					padding: 0;
+					line-height: 1.8em; }
+			body div.hud_top div.hud_user_currency img {
+				width: 65px;
+				height: 65px;
+				border: 0;
+				outline: 0; }
+		body div.hud_top div.hud_user_rss {
+			float: left;
+			width: 100%;
+			height: 25px; }
+			body div.hud_top div.hud_user_rss ul {
+				flot: left;
+				width: 100%;
+				height: 100%;
+				margin: 0;
+				padding: 0;
+				list-style-type: none;
+				display: flex; }
+				body div.hud_top div.hud_user_rss ul li {
+					float: left;
+					flex: 1 1 auto;
+					font-family: 'Open Sans';
+					font-weight: 300;
+					font-size: .8em;
+					margin: auto;
+					padding: 0;
+					text-align: center;
+					color: rgba(250, 250, 250, 0.7); }
+					body div.hud_top div.hud_user_rss ul li i {
+						font-size: 1.3em;
+						color: rgba(40, 41, 42, 0.9); }
+		body div.hud_top div.hud_chat {
+			width: 100%;
+			height: 20px;
+			float: left;
+			margin: 0;
+			padding: 0;
+			background-color: rgba(158, 54, 42, 0.99); }
+			body div.hud_top div.hud_chat p {
+				font-family: 'Open Sans';
+				font-weight: 300;
+				color: rgba(255, 255, 255, 0.9);
+				font-size: .8em;
+				margin: 2px;
+				line-height: 16px; }
+				body div.hud_top div.hud_chat p span.chat_user {
+					font-size: 1em;
+					line-height: 16px;
+					margin-right: 4px;
+					font-family: 'Georgia'; }
+				body div.hud_top div.hud_chat p span.chat_link {
+					color: rgba(255, 221, 166, 0.9); }
+	body div#game {
+		width: 100%;
+		height: 100%;
+		margin: 0;
+		padding: 0;
+		background-color: rgba(40, 41, 41, 0.2); }
+		body div#game canvas {
+			width: 100%;
+			height: 100%;
+			margin: 0;
+			padding: 0;
+			background: url("../img/map.jpg") center center; }
+	body div.hud_bot {
+		width: 100%;
+		height: 64px;
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		margin: 0;
+		padding: 0;
+		background-color: rgba(30, 41, 42, 0.5); }
+		body div.hud_bot ul {
+			width: 100%;
+			height: 64px;
+			margin: 0;
+			padding: 0;
+			list-style-type: none;
+			display: flex; }
+			body div.hud_bot ul li {
+				width: 64px;
+				height: 64px;
+				margin: auto;
+				padding: 0;
+				position: relative;
+				background-color: rgba(40, 41, 42, 0.7); }
+				body div.hud_bot ul li img {
+					width: 64px;
+					height: 64px;
+					position: absolute;
+					top: 0;
+					left: 0;
+					z-index: 1; }
+				body div.hud_bot ul li p {
+					position: absolute;
+					top: 0;
+					left: 0;
+					width: 64px;
+					font-family: 'Georgia';
+					font-weight: 400;
+					color: rgba(255, 255, 255, 0.8);
+					line-height: 32px;
+					text-align: center;
+					z-index: 2; }
+			body div.hud_bot ul li.to {
+				width: 64px;
+				height: 64px;
+				margin: auto;
+				padding: 0;
+				position: relative;
+				background-color: rgba(40, 41, 42, 0.7); }
+				body div.hud_bot ul li.to img {
+					width: 64px;
+					height: 64px;
+					position: absolute;
+					top: -20px;
+					left: 0;
+					z-index: 1; }
+				body div.hud_bot ul li.to p {
+					position: absolute;
+					top: 48px;
+					left: 0;
+					width: 64px;
+					font-family: 'Georgia';
+					font-weight: 400;
+					color: rgba(255, 255, 255, 0.8);
+					font-size: .9em;
+					line-height: .9em;
+					margin: 0;
+					padding: 0;
+					text-align: center;
+					z-index: 2; }
+			body div.hud_bot ul li.tt {
+				width: 64px;
+				height: 64px;
+				margin: auto;
+				padding: 0;
+				position: relative;
+				background-color: rgba(40, 41, 42, 0.7); }
+				body div.hud_bot ul li.tt img {
+					width: 64px;
+					height: 64px;
+					position: absolute;
+					top: 0;
+					left: 0;
+					z-index: 1; }
+				body div.hud_bot ul li.tt p {
+					position: absolute;
+					top: 41px;
+					left: 0;
+					width: 64px;
+					font-family: 'Georgia';
+					font-weight: 400;
+					color: rgba(40, 41, 42, 0.7);
+					font-size: .9em;
+					line-height: 1.6em;
+					margin: 0;
+					padding: 0;
+					text-align: center;
+					z-index: 2;
+					background-color: rgba(255, 255, 255, 0.7); }
+	body div#hud_modal.comfirm {
+		width: 300px;
+		height: auto;
+		margin: 0 0 0 -150px;
+		padding: 0;
+		position: absolute;
+		z-index: 9;
+		top: 100px;
+		left: 50%;
+		border-radius: 0;
+		background-color: rgba(255, 255, 255, 0.9);
+		display: none; }
+		body div#hud_modal.comfirm div.modal_head {
+			width: 100%;
+			height: 64px;
+			padding: 0;
+			margin: 0; }
+			body div#hud_modal.comfirm div.modal_head p {
+				padding: 0;
+				margin: 0;
+				font-family: 'Georgia';
+				font-weight: 400;
+				text-align: center;
+				font-size: 2em;
+				line-height: 2em;
+				color: rgba(40, 41, 42, 0.8); }
+		body div#hud_modal.comfirm div.modal_body {
+			width: 290px;
+			height: auto;
+			padding: 5px; }
+			body div#hud_modal.comfirm div.modal_body p {
+				font-family: 'Open Sans';
+				font-weight: 300;
+				font-size: .9em;
+				color: rgba(40, 41, 42, 0.8);
+				padding: 0;
+				margin: 0; }
+			body div#hud_modal.comfirm div.modal_body ul {
+				float: left;
+				width: 270px;
+				height: auto;
+				margin: 10px 5px;
+				padding: 5px;
+				list-style-type: none;
+				border-radius: 5px;
+				background-color: rgba(40, 41, 42, 0.7); }
+				body div#hud_modal.comfirm div.modal_body ul li {
+					float: left;
+					font-family: 'Open Sans';
+					font-weight: 400;
+					line-height: .85em;
+					font-size: .85em;
+					margin: 0 5px;
+					color: rgba(255, 255, 255, 0.9); }
+					body div#hud_modal.comfirm div.modal_body ul li i {
+						font-size: .95em;
+						line-height: .85em;
+						margin: 0 4px;
+						color: rgba(255, 255, 255, 0.9); }
+		body div#hud_modal.comfirm div.modal_foot {
+			width: 300px;
+			height: 64px;
+			float: left;
+			margin: 5px 0 0 0;
+			padding: 0; }
+			body div#hud_modal.comfirm div.modal_foot div.cancel, body div#hud_modal.comfirm div.modal_foot div.comfirm {
+				width: 140px;
+				height: 54px;
+				float: left;
+				margin: 5px;
+				padding: 0;
+				font-family: 'Open Sans';
+				font-weight: 300;
+				font-size: 1em;
+				text-align: center;
+				line-height: 54px;
+				color: rgba(40, 41, 42, 0.9); }
+			body div#hud_modal.comfirm div.modal_foot div.comfirm {
+				border-radius: 3px;
+				color: rgba(250, 250, 250, 0.7);
+				background-color: rgba(29, 79, 130, 0.7); }
+			body div#hud_modal.comfirm div.modal_foot div.comfirm:hover {
+				background-color: rgba(29, 79, 130, 0.9); }
+			body div#hud_modal.comfirm div.modal_foot div.cancel:hover {
+				text-decoration: underline; }
+	body div#hud_modal_rank {
+		width: 320px;
+		height: 100%;
+		margin: 0 0 0 -160px;
+		padding: 0;
+		position: absolute;
+		top: 0;
+		left: 50%;
+		background-color: rgba(255, 255, 255, 0.2);
+		z-index: 9;
+		display: none; }
+		body div#hud_modal_rank div.hud_mr_head {
+			width: 100%;
+			height: 64px;
+			float: left;
+			margin: 0;
+			padding: 0;
+			background-color: rgba(40, 41, 42, 0.7); }
+			body div#hud_modal_rank div.hud_mr_head div.hum_mr_close:hover {
+				background-color: rgba(255, 255, 255, 0.5); }
+			body div#hud_modal_rank div.hud_mr_head div.hud_mr_close {
+				width: 64px;
+				height: 64px;
+				float: left;
+				margin: 0;
+				padding: 0;
+				background-color: rgba(255, 255, 255, 0.3); }
+				body div#hud_modal_rank div.hud_mr_head div.hud_mr_close i {
+					width: 64px;
+					height: 64px;
+					font-size: 2.5em;
+					font-weight: 300;
+					color: rgba(255, 255, 255, 0.9);
+					line-height: 64px;
+					text-align: center;
+					padding: auto; }
+			body div#hud_modal_rank div.hud_mr_head div.hud_mr_title {
+				width: 256px;
+				height: 32px;
+				float: left;
+				margin: 0;
+				padding: 0; }
+				body div#hud_modal_rank div.hud_mr_head div.hud_mr_title p {
+					font-family: 'Georgia';
+					font-weight: 400;
+					font-size: 1.5em;
+					line-height: 32px;
+					text-align: center;
+					margin: 0;
+					padding: 0;
+					color: rgba(255, 255, 255, 0.9); }
+			body div#hud_modal_rank div.hud_mr_head ul.hud_mr_division {
+				width: 256px;
+				height: 32px;
+				float: left;
+				list-style-type: none;
+				margin: 0;
+				padding: 0; }
+				body div#hud_modal_rank div.hud_mr_head ul.hud_mr_division li {
+					float: left;
+					width: 128px;
+					height: 32px;
+					font-family: 'Georgia';
+					font-weight: 300;
+					font-size: 1.1em;
+					line-height: 32px;
+					text-align: center;
+					color: rgba(255, 255, 255, 0.7); }
+				body div#hud_modal_rank div.hud_mr_head ul.hud_mr_division li.active {
+					background-color: rgba(40, 41, 42, 0.6); }
+		body div#hud_modal_rank div.hud_mr_body {
+			width: 320px;
+			height: auto;
+			margin: 5px 0;
+			padding: 0;
+			float: left; }
+			body div#hud_modal_rank div.hud_mr_body ul {
+				float: left;
+				list-style-type: none;
+				width: 300px;
+				margin: 15px 10px;
+				padding: 0; }
+				body div#hud_modal_rank div.hud_mr_body ul li {
+					width: 300px;
+					height: 64px;
+					float: left;
+					padding: 0;
+					margin: 10px 0;
+					background-color: rgba(255, 255, 255, 0.7);
+					border-radius: 4px; }
+					body div#hud_modal_rank div.hud_mr_body ul li img {
+						width: 64px;
+						height: 64px;
+						float: left;
+						border-radius: 4px 0 0 4px; }
+					body div#hud_modal_rank div.hud_mr_body ul li p {
+						float: left;
+						width: 172px;
+						height: 64px;
+						font-family: 'Georgia';
+						font-weight: 300;
+						color: rgba(40, 41, 42, 0.9);
+						line-height: 32px;
+						text-align: center;
+						margin: 0;
+						padding: 0;
+						font-size: 1.1em; }
+						body div#hud_modal_rank div.hud_mr_body ul li p span.rank_alliance {
+							font-weight: 400;
+							color: rgba(40, 41, 42, 0.7); }
+					body div#hud_modal_rank div.hud_mr_body ul li div.hud_mr_r {
+						width: 64px;
+						height: 64px;
+						float: left;
+						margin: 0;
+						padding: 0; }
+						body div#hud_modal_rank div.hud_mr_body ul li div.hud_mr_r p:first-child {
+							font-family: 'Open Sans';
+							font-weight: 300;
+							font-size: .8em;
+							text-align: center;
+							line-height: 20px;
+							width: 64px;
+							height: 20px;
+							margin: 0;
+							padding: 0;
+							color: rgba(255, 255, 255, 0.7);
+							background-color: #28292a;
+							border-radius: 0 4px 0 0; }
+						body div#hud_modal_rank div.hud_mr_body ul li div.hud_mr_r p:last-child {
+							font-family: 'Georgia';
+							font-weight: 400;
+							font-size: 2em;
+							text-align: center;
+							font-style: italic;
+							width: 64px;
+							height: 44px;
+							margin: 0;
+							padding: 0;
+							border-radius: 0 0 4px 0;
+							color: rgba(255, 255, 255, 0.9);
+							background-color: rgba(40, 41, 41, 0.9); }
+						body div#hud_modal_rank div.hud_mr_body ul li div.hud_mr_r p.first {
+							color: rgba(217, 164, 65, 0.9); }
+						body div#hud_modal_rank div.hud_mr_body ul li div.hud_mr_r p.second {
+							color: rgba(204, 194, 194, 0.9); }
+						body div#hud_modal_rank div.hud_mr_body ul li div.hud_mr_r p.third {
+							color: rgba(150, 90, 56, 0.9); }
+	body div#overlay {
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 2;
+		display: none; }
+		body div#overlay img {
+			width: 100%;
+			height: 100%; }

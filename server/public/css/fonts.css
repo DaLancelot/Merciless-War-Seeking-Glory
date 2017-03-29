@@ -1,0 +1,141 @@
+/*	FONTS  */
+
+@font-face {
+ font-family: Georgia;
+ src: url(fonts/Georgia.ttf);
+ font-weight: 400;
+ font-style: normal;
+}
+
+@font-face {
+ font-family: Open Sans;
+ src: url(fonts/OpenSans-Light.ttf);
+ font-weight: 300;
+ font-style: normal;
+}
+
+@font-face {
+ font-family: Open Sans;
+ src: url(fonts/OpenSans-Regular.ttf);
+ font-weight: 400;
+ font-style: normal;
+}
+
+@font-face {
+ font-family: Open Sans;
+ src: url(fonts/OpenSans-Bold.ttf);
+ font-weight: 700;
+ font-style: bold;
+}
+
+@font-face {
+ font-family: Montserrat;
+ src: url(fonts/Montserrat-Regular.ttf);
+ font-weight: 300;
+ font-style: normal;
+}
+
+@font-face {
+ font-family: Montserrat;
+ src: url(fonts/Montserrat-Bold.ttf);
+ font-weight: 700;
+ font-style: bold;
+}
+
+@font-face {
+ font-family: alienleague;
+ src: url(fonts/alienleague.ttf);
+ font-weight: 300;
+ font-style: normal;
+}
+
+@font-face {
+ font-family: alienleague;
+ src: url(fonts/alienleaguebold.ttf);
+ font-weight: 400;
+ font-style: bold;
+}
+
+@font-face {
+ font-family: alienleague;
+ src: url(fonts/alienleagueital.ttf);
+ font-weight: 300;
+ font-style: italic;
+}
+
+@font-face {
+ font-family: Anxiolytic;
+ src: url(fonts/Anxiolytic_Light.ttf);
+ font-weight: 300;
+ font-style: normal;
+}
+
+@font-face {
+ font-family: Anxiolytic;
+ src: url(fonts/Anxiolytic_Regular.ttf);
+ font-weight: 400;
+ font-style: normal;
+}
+
+@font-face {
+ font-family: Anxiolytic;
+ src: url(fonts/Anxiolytic_Light_italic.ttf);
+ font-weight: 300;
+ font-style: italic;
+}
+
+@font-face {
+ font-family: Anxiolytic;
+ src: url(fonts/Anxiolytic_Regular_italic.ttf);
+ font-weight: 400;
+ font-style: italic;
+}
+
+@font-face {
+ font-family: Borda;
+ src: url(fonts/Borda-Light.ttf);
+ font-weight: 200;
+ font-style: normal;
+}
+
+@font-face {
+ font-family: Borda;
+ src: url(fonts/Borda-Italic.ttf);
+ font-weight: 300;
+ font-style: italic;
+}
+
+@font-face {
+ font-family: Borda;
+ src: url(fonts/Borda-Medium.ttf);
+ font-weight: 300;
+ font-style: normal;
+}
+
+@font-face {
+ font-family: Early Times;
+ src: url(fonts/EarlyTimesThinDemo.ttf);
+ font-weight: 200;
+ font-style: normal;
+}
+
+@font-face {
+ font-family: Early Times;
+ src: url(fonts/EarlyTimesLightDemo.ttf);
+ font-weight: 300;
+ font-style: normal;
+}
+
+@font-face {
+ font-family: Early Times;
+ src: url(fonts/EarlyTimesDemo.ttf);
+ font-weight: 400;
+ font-style: normal;
+}
+
+@font-face {
+ font-family: Early Times;
+ src: url(fonts/EarlyTimesBoldDemo.ttf);
+ font-weight: 700;
+ font-style: normal;
+}
